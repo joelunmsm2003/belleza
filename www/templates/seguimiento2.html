@@ -1,0 +1,113 @@
+<ion-view title="Seguimiento" id="page13" ng-init="seguimiento=1" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[2]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+  <ion-content padding="true" class="has-header">
+    <h3 id="seguimiento2-heading19" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;">{{propuesta.ramo_compania_producto__ramo__nombre}} / {{propuesta.ramo_compania_producto__compania__nombre}}  /{{propuesta.ramo_compania_producto__producto__nombre}} </h3>
+    <form id="seguimiento2-form9" class="list">
+      <ion-item class="item-icon-right" id="seguimiento2-list-item110"  >{{cliente.user__first_name}} {{cliente.user__last_name}}
+        <i class="icon ion-android-person"></i>
+    </ion-item>
+
+      </ion-item>
+      <div id="seguimiento2-button-bar4" class="button-bar">
+        <button id="seguimiento2-button58" ng-click="cierre=2;seguimiento=1;poliza=2" style="font-weight:300;" class="button  button-block " ng-class="{'button-positive': seguimiento==1,'button-positive button-outline': seguimiento==2}" >Seg</button>
+        <button id="seguimiento2-button134" ng-click="cierre=1;poliza=2;seguimiento=2" style="font-weight:300;" class="button button-block" ng-class="{'button-positive': cierre==1,'button-positive button-outline': cierre==2}">Cierre</button>
+        <button id="seguimiento2-button59" ng-click="poliza=1;cierre=2;seguimiento=2" style="font-weight:300;" class="button button-block" ng-class="{'button-positive': poliza==1,'button-positive button-outline': poliza==2}">Entrega</button>
+      </div>
+    </form>
+
+    <div id="seguimiento2-container14" ng-show="seguimiento==1">
+
+
+
+      <form id="seguimiento2-form15" class="list" ng-submit='agregacita(cita)'>
+
+        <label class="item item-input" id="seguimiento2-input22">
+        <span class="input-label">Fecha de Citas</span>
+        <input placeholder="" type="date" ng-model='cita.fecha_cita'>
+        </label>
+
+        <h3 id="seguimiento2-heading38" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;">Seguimiento</h3>
+        <label class="item item-input" id="seguimiento2-textarea8">
+          <span class="input-label">Observacion</span><textarea  rows='5' ng-model='cita.observacion' ></textarea></label>
+        <div id="seguimiento2-button-bar21" class="button-bar">
+          
+          <button id="seguimiento2-button144" type='submit' class="button button-positive button-block">Guardar</button>
+        </div>
+      </form>
+    </div>
+
+
+    <div id="seguimiento2-container18" ng-show="cierre==1">
+      <form id="seguimiento2-form31" class="list" ng-submit='agregacita(cita)'>
+
+        <label class="item item-input" id="seguimiento2-input22">
+        <span class="input-label">Fecha de Cita</span>
+        <input placeholder="" type="date" ng-model='cita.fecha_cita'>
+        </label>
+
+        <h3 id="seguimiento2-heading36" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;">Cierre</h3>
+        <label class="item item-input" id="seguimiento2-input70">
+          <span class="input-label">Fecha Solicitud</span>
+          <input placeholder="" type="date" ng-model='cita.fecha_solicitud'>
+        </label>
+        <label class="item item-input" id="seguimiento2-input71">
+          <span class="input-label">Prima Target <strong> US $</strong></span>
+          <input placeholder="" required type="number" ng-model='cita.prima_target'>
+        </label>
+        <label class="item item-select" id="seguimiento2-input72">
+          <span class="input-label">Modalidad</span>
+          <select ng-options="item as item.nombre for item in modalidad track by item.id" ng-model="cita.modalidad"></select>
+        </label>
+        <label class="item item-input" id="seguimiento2-input73">
+          <span class="input-label">Prima Anual <strong>US $</strong></span>
+          <input placeholder="" required type="number" ng-model='cita.prima_anual'>
+        </label>
+        <div id="seguimiento2-button-bar20" class="button-bar">
+          <button type='submit' id="seguimiento2-button136"  class="button button-positive button-block">Guardar Cierre</button>
+        </div>
+      </form>
+    </div>
+
+
+
+    <div id="seguimiento2-container13" ng-show="poliza==1">
+      <form id="seguimiento2-form14" class="list" ng-submit='agregacita(cita)'>
+
+        <label class="item item-input" id="seguimiento2-input22">
+        <span class="input-label">Fecha de Cita</span>
+        <input placeholder="" type="date" ng-model='cita.fecha_cita'>
+        </label>
+
+        <div class="spacer" style="width: 300px; height: 16px;"></div>
+        <h3 id="seguimiento2-heading12" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;"> Poliza efectiva desde</h3>
+        <label class="item item-input" id="seguimiento2-input23">
+          <span class="input-label">Fecha </span>
+          <input placeholder="" type="date" ng-model='cita.fecha_poliza'>
+        </label>
+        <button id="seguimiento2-button65" type='submit' class="button button-positive button-block">Guardar</button>
+      </form>
+    </div>
+
+    <div class="spacer" style="width: 268px; height: 45px;"></div>
+  </ion-content>
+
+</ion-view>

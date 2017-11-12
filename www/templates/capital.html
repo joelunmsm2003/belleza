@@ -1,0 +1,68 @@
+<ion-side-menus enable-menu-with-back-views="false" style="">
+  <ion-side-menu-content>
+    <ion-nav-bar class="bar-stable">
+      <ion-nav-back-button></ion-nav-back-button>
+      <ion-nav-buttons side="left">
+        <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+      </ion-nav-buttons>
+    </ion-nav-bar>
+    <ion-nav-view name="side-menu21"></ion-nav-view>
+  </ion-side-menu-content>
+  <ion-side-menu side="left" id="side-menu21" style="background-color:#FFF7F7;">
+    <ion-content padding="false" style="top:0px !important;" class="side-menu-left sider-menu">
+      <div class="spacer" style="width: 268px; height: 41px;"></div>
+      <div class="profile-menu">
+        <img src="{{host}}/{{agente.photo}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+      </div>
+      <h1 id="capital-heading4" style="color: rgb(255, 255, 255); font-weight: 300; text-align: center;">{{agente.user__first_name}}</h1>
+      <div class="spacer" style="width: 268px; height: 29px;"></div>
+      <ion-list id="capital-list6">
+        <ion-item class="item-icon-left side-menu" id="capital-list-item19" ui-sref="capital.miPerfil()" menu-close="" style="">
+          <i class="icon {{iconos[0]['icono']}}"></i>Mi Perfil</ion-item>
+        <ion-item class="item-icon-left dark side-menu" id="capital-list-item17" ui-sref="capital.registroDeCitas()" menu-close="" style="">
+          <i class="icon {{iconos[2]['icono']}}"></i>Registro de Citas</ion-item>
+        <ion-item class="item-icon-left dark side-menu" id="capital-list-item71" ui-sref="capital.historial()" menu-close="" style="">
+          <i class="icon {{iconos[6]['icono']}}"></i>Historial de Citas</ion-item>
+        <ion-item class="item-icon-left dark side-menu" id="capital-list-item112" ui-sref="capital.metricas()" menu-close="" style="">
+          <i class="icon ion-social-buffer"></i>Resumen de Citas</ion-item>
+
+        
+
+          
+  <!--       <ion-item class="item-icon-left dark side-menu" id="capital-list-item121" ui-sref="capital.resumenDeNegocios()" menu-close="" style="">
+          <i class="icon ion-stats-bars"></i>Resumen de Negocios</ion-item> -->
+
+
+
+
+        <ion-item class="item-icon-left dark side-menu" id="capital-list-item16" ui-sref="capital.miGestion()" menu-close="" style="">
+          <i class="icon ion-pie-graph"></i>Mi Cartera</ion-item>
+
+
+
+        <ion-item class="item-icon-left dark side-menu" id="capital-list-item73" ui-sref="capital.clientes()" menu-close="" style="">
+          <i class="icon ion-android-people"></i>Mis Clientes</ion-item>
+
+
+          <ion-item class="item-icon-left side-menu" id="capital-list-item20" ui-sref="capital.biblioteca()"  menu-close="" style="">
+          <i class="icon ion-ios-bookmarks-outline"></i>Mi Biblioteca</ion-item>
+
+
+
+        <ion-item ng-click='salir()' class="item-icon-left side-menu" id="capital-list-item20" style="">
+          <i class="icon ion-log-out"></i>Salir</ion-item>
+
+          
+          
+<!-- 
+        <ion-item ng-click='actualizar()' class="item-icon-left side-menu" id="capital-list-item20" style="">
+          <i class="icon ion-load-c"></i>Actualizar</ion-item> -->
+
+
+      </ion-list>
+      <div class="spacer" style="height: 100px;"></div>
+      <div class="spacer" style="height: 100px;"></div>
+      <div class="spacer" style="height: 100px;"></div>
+    </ion-content>
+  </ion-side-menu>
+</ion-side-menus>

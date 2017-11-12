@@ -1,0 +1,114 @@
+
+
+<ion-view title="Nuevo Prospecto de Cliente" id="page5" ng-init="tab=1" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+
+  <ion-content padding="true" class="has-header">
+    <div id="prospectoDeCliente-container9" ng-show="tab==1">
+
+      <h3 id="seguimiento-heading15" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;">Registra tu nuevo prospecto</h3>
+
+
+      <label class="item item-input" id="seguimiento-search1" style="">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search"  ng-click='traetodoslosclientes()' ng-model='datocliente' placeholder="Busca tu cliente">
+      </label>
+
+      
+      
+
+      <ion-item ng-if='datocliente'  ng-mouseover='icon=true' ng-mouseleave='icon=false' ng-repeat="cli in todosclientes | filter: datocliente"  class="item-icon-right positive searchlist" ng-click='traecliente(cli.id)'>
+          <span style='font-size:14px'> {{cli.user__first_name}} {{cli.user__last_name}} {{cli.user__email}}</span></ion-item>
+
+      <div id="prospectoDeCliente-button-bar12" class="button-bar">
+          <button ng-click='nuevoclienteopenModal(cliente)' id="prospectoDeCliente-button104" style="font-size:14px; font-weight: 300;" class="button button-positive button-block button-outline">Agregar Nuevo Cliente</button>
+      </div>
+
+
+      <form ng-if='clientesave' id="prospectoDeCliente-form10" class="list" ng-submit='agregacliente(cliente)'>
+     
+
+        <h3 style="font-weight: 300;">
+          Datos personales</h3>
+
+
+        <label class="item item-input" id="prospectoDeCliente-input14">
+
+        
+          <span class="input-label">Fecha </span>
+          <input ng-model='clientesave.fecha_inicio' disabled placeholder="" type="text">
+        </label>
+        <label class="item item-input" id="prospectoDeCliente-input26">
+          <span class="input-label">Apellidos</span>
+          <input ng-model='clientesave.user__last_name' disabled placeholder="" type="text">
+        </label>
+        <label class="item item-input" id="prospectoDeCliente-input27">
+          <span class="input-label">Nombres</span>
+          <input ng-model='clientesave.user__first_name' disabled placeholder="" type="text">
+        </label>
+
+        <label class="item item-input" id="prospectoDeCliente-input27">
+          <span class="input-label">Email</span>
+          <input ng-model='clientesave.user__email' disabled placeholder="" type="email">
+        </label>
+
+        <label class="item item-input" id="prospectoDeCliente-input28">
+          <span class="input-label">Nacimiento</span>
+          <input ng-model='clientesave.fecha_nacimiento' disabled placeholder="" type="text">
+        </label>
+        <label class="item item-input" id="prospectoDeCliente-input24">
+          <span class="input-label">Telefono</span>
+          <input ng-model='clientesave.telefono.numero' disabled placeholder="" type="text">
+        </label>
+       <!--  <label class="item item-input" id="prospectoDeCliente-textarea2">
+          <span class="input-label">Observacion</span><textarea disabled rows="5" ng-model='clientesave.observacion' placeholder=""></textarea></label> -->
+
+
+
+        </form>
+
+
+       <div  id="prospectoDeCliente-button-bar15" class="button-bar"></div>
+        <div ng-if='clientesave' id="prospectoDeCliente-button-bar12" class="button-bar">
+          <button ng-click='openModal(clientesave.id)' id="prospectoDeCliente-button104" style="font-size:13px;" class="button button-positive button-block button-outline">Agregar Propuesta</button>
+          <a  ui-sref="fichaDeCliente({cliente: {{clientesave.id}}})"   id="prospectoDeCliente-button117" style="font-size:13px;" class="button button-positive button-block">Datos adicionales </a>
+        </div>
+
+
+         <!--Listas de Propuestas -->
+
+        <h3 ng-if='listapropuestas'  id="prospectoDeCliente-list-item23" style="font-weight: 300;">
+          {{listapropuestas.length}}  Propuestas</h3>
+
+          propuestaSalud
+
+        <ion-item  ng-repeat="n in listapropuestas" class="item-icon-right" id="prospectoDeCliente-list-item25" ui-sref="propuestaSalud({propuesta: {{n.id}}})" style="">{{n.ramo_compania_producto__ramo__nombre}} / {{n.ramo_compania_producto__compania__nombre}} / {{n.ramo_compania_producto__producto__nombre}}
+          <i class="icon ion-chevron-right"></i>
+        </ion-item>
+     
+        <div class="spacer" style="width: 268px; height: 55px;"></div>
+      
+       <!--  <a ui-sref="capital.registroDeCitas()" id="prospectoDeCliente-button111" class="button button-positive button-block">Guardar</a> -->
+      
+    </div>
+  </ion-content>
+</ion-view>

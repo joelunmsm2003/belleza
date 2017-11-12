@@ -1,0 +1,31 @@
+<ion-view title="Clientes" id="page22" style="">
+  <ion-content padding="true" class="has-header">
+    <div id="clientes-button-bar16" class="button-bar"></div>
+    <div id="clientes-button-bar17" class="button-bar"></div>
+    <form id="clientes-form21" class="list">
+      <h3 id="clientes-heading28" style="color: rgb(0, 0, 0); font-weight: 300;">Buscar Cliente</h3>
+      
+    
+       <label class="item item-input" id="seguimiento-search1" style="">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search"   ng-model='datocliente' placeholder="Buscar registro">
+      </label>
+
+
+       <ion-item ng-if='datocliente'  ng-mouseover='icon=true' ng-mouseleave='icon=false' ng-repeat="cli in todosclientes | filter: datocliente"  class="item-icon-right positive searchlist" ui-sref="fichaDeCliente({cliente: {{cli.id}}})">
+          <span style='font-size:14px'> {{cli.user__first_name}} {{cli.user__last_name}} {{cli.user__email}}</span></ion-item>
+
+
+      
+
+
+   
+
+<!--       <button id="clientes-button112" class="button button-positive button-block">Buscar</button> -->
+      <!-- <ion-item class="item-icon-right stable" id="clientes-list-item108" ui-sref="fichaDeCliente()" style="">Carlos Alcantara
+        <i class="icon ion-android-person"></i>
+      </ion-item> -->
+      <div id="clientes-button-bar18" class="button-bar"></div>
+    </form>
+  </ion-content>
+</ion-view>

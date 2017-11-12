@@ -1,0 +1,46 @@
+<ion-view title="Detalle de Propuesta" id="page25" style="">
+  <ion-content padding="true" class="has-header">
+    <h3 id="propuestaSalud-heading40" style="color: rgb(0, 0, 0); font-weight: 300;"></h3>
+    <ion-list id="propuestaSalud-list13">
+      
+
+
+      
+          <ion-item class="item-icon-right" id="seguimiento2-list-item110">{{detallepropuesta.cliente__user__first_name}} {{detallepropuesta.cliente__user__last_name}}
+        <i class="icon ion-android-person"></i>
+    </ion-item>
+
+
+      <label class="item item-input" id="propuestaSalud-input13">
+        <span class="input-label">Ramo</span>
+        <input placeholder="" ng-model='detallepropuesta.ramo_compania_producto__ramo__nombre' type="text">
+      </label>
+
+      <label class="item item-input" id="propuestaSalud-input19">
+        <span class="input-label">Compañia</span>
+        <input placeholder="" ng-model='detallepropuesta.ramo_compania_producto__compania__nombre' type="text">
+      </label>
+      <label class="item item-input" id="propuestaSalud-input19">
+        <span class="input-label">Producto</span>
+        <input placeholder="" ng-model='detallepropuesta.ramo_compania_producto__producto__nombre' type="text">
+      </label>
+      <label class="item item-input" id="propuestaSalud-input20">
+        <span class="input-label">Fecha</span>
+        <input placeholder="" type="text" ng-model='detallepropuesta.fecha'>
+      </label>
+      <label class="item item-input" id="propuestaSalud-input21">
+        <span class="input-label">Observacion</span>
+        <input placeholder="" type="text" ng-model='detallepropuesta.observacion'>
+      </label>
+
+      
+
+          <div id="seguimiento2-button-bar4" class="button-bar">
+        <button id="seguimiento2-button58"   ng-click='eliminapropuesta(detallepropuesta.id)' class="button button-positive button-block button-outline">Eliminar Propuesta</button>
+    
+        
+      </div>
+
+    </ion-list>
+  </ion-content>
+</ion-view>

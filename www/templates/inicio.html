@@ -1,0 +1,40 @@
+<ion-view title="Inicio" hide-nav-bar="true" id="page30" class="inicio" style="">
+  <ion-content padding="true" class=" manual-remove-top-padding">
+    <div class="spacer" style="width: 300px; height: 34.9805px;"></div>
+    <div class="profile-menu">
+      <img src="{{host}}/{{agente.photo}}" style="display: block; width: 100%; height: auto; margin-left: auto; margin-right: auto;">
+    </div>
+    <h1 id="inicio-heading42" style="color: rgb(255, 255, 255); font-weight: 300; text-align: center;">{{agente.user__first_name}}</h1>
+
+    <div class="spacer" style="width: 300px; height: 20px;"></div>
+    <ion-list id="inicio-list12">
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item101" ui-sref="capital.miPerfil()" style="">
+        <i class="icon {{iconos[0]['icono']}}"></i>Mi Perfil</ion-item>
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item102" ui-sref="capital.registroDeCitas()" style="">
+        <i class="icon {{iconos[2]['icono']}}"></i>Registro de Citas</ion-item>
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item103" ui-sref="capital.historial()" style="">
+        <i class="icon {{iconos[6]['icono']}}"></i>Historial de Citas</ion-item>
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item109" ui-sref="capital.metricas()" style="">
+        <i class="icon ion-social-buffer"></i>Resumen de Citas</ion-item>
+     
+
+
+<!--       <ion-item class="item-icon-left side-menu" id="inicio-list-item115" ui-sref="capital.resumenDeNegocios()" style="">
+         <i class="icon ion-connection-bars"></i>Resumen de Negocios</ion-item> -->
+
+
+
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item111" ui-sref="capital.miGestion()" style=""> 
+        <i class="icon ion-pie-graph"></i>Mi Cartera</ion-item>
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item100" ui-sref="capital.clientes()" style="">
+        <i class="icon ion-person-stalker"></i>Mis Clientes</ion-item>
+
+        <ion-item class="item-icon-left side-menu" ui-sref="capital.biblioteca()" id="capital-list-item20" style="">
+          <i class="icon ion-ios-bookmarks-outline"></i>Mi Biblioteca</ion-item>
+
+
+      <ion-item class="item-icon-left side-menu" id="inicio-list-item113"  ng-click='salir()' style="">
+        <i class="icon ion-log-out"></i>Salir</ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

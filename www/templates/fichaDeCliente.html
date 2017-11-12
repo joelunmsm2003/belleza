@@ -1,0 +1,119 @@
+<ion-view title="Ficha de Cliente" id="page15" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+
+  <ion-content padding="true" class="has-header">
+    <h3 id="fichaDeCliente-heading18" style="color: rgb(0, 0, 0); font-weight: 300; text-align: center;">Datos Personales</h3>
+    <form id="fichaDeCliente-form19" class="list" ng-submit='actualizarcliente(cliente)'>
+
+
+      <label class="item item-input" id="fichaDeCliente-input31">
+        <span class="input-label">Nombre Completo</span>
+        <input ng-model='cliente.user__first_name'  type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input32">
+        <span class="input-label">Email</span>
+        <input ng-model='cliente.user__email' placeholder="alacanta@gmail.com" type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input33">
+        <span class="input-label">Telefono</span>
+        <input ng-model='cliente.telefono.numero' placeholder="980729169" type="tel">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input34">
+        <span class="input-label">Direccion</span>
+        <input ng-model='cliente.user__direccion' placeholder="Alameda Peru 125" type="text">
+      </label>
+      <label class="item item-input" id="fichaDeCliente-input35">
+        <span class="input-label">Fecha Nacimiento</span>
+        <input ng-model='cliente.fecha_nacimiento' placeholder="" type="date">
+      </label>
+      <label class="item item-select" id="fichaDeCliente-input36">
+        <span class="input-label">Estado Civil</span>
+        <select ng-model='cliente.estado_civil'><option value="1">Casado(a)</option><option value="2">Soltero</option></select>
+      </label>
+      
+      <label class="item item-input" id="fichaDeCliente-input38" >
+        <span class="input-label">N° Hijos</span>
+        <input ng-model='cliente.numero_hijos' ng-change='creahijos(cliente)' placeholder="" type="text">
+      </label>
+
+      <label class="item item-input" id="fichaDeCliente-input38" ng-repeat='n in cliente.parientes'>
+        <span class="input-label">{{n.relacion__nombre}}</span>
+        {{n.edad}} {{n.nombre}} 
+      </label>
+
+
+     <!--  <a ui-sref="capital.historial()" id="fichaDeCliente-button107" class="button button-positive button-block">Historial de Citas</a>
+      <h3 id="fichaDeCliente-heading22" style="color: rgb(0, 0, 0); font-weight: 300;">Servicios Capital Activo</h3>
+      <ion-item id="fichaDeCliente-list-item69" ui-sref="cita()" style="">Salud</ion-item>
+      <ion-item id="fichaDeCliente-list-item68" ui-sref="cita()" style="">Investigacion</ion-item>
+ -->
+
+      <!-- <a ui-sref="nuevaPropuesta()" id="fichaDeCliente-button100" style="font-size:13px;text-align:left;" class="button button-positive button-block button-outline icon-right ion-android-add">Agregar Propuesta</a> -->
+
+   
+      <button id="fichaDeCliente-button120" type="submit" class="button button-positive button-block">Guardar</button>
+    </form>
+
+       <button  ng-click='openModal(cliente)' class="button button-positive bt button-block button-outline">Agregar Dependiente</button>
+
+
+
+    <h3 id="listaDePropuestas-heading26" style="color: rgb(0, 0, 0); font-weight: 300;">{{listapropuestas.length}} Propuestas</h3>
+    <ion-list id="listaDePropuestas-list14">
+
+
+      <ion-item ng-repeat="n in listapropuestas" class="item-icon-right" id="listaDePropuestas-list-item130"  ui-sref="seguimiento2({cliente: {{cliente.id}}, propuesta: {{n.id}}})" style="">
+
+
+      {{n.ramo_compania_producto__ramo__nombre}} / {{n.ramo_compania_producto__compania__nombre}} / {{n.ramo_compania_producto__producto__nombre}}
+
+
+        <i class="icon ion-chevron-right"></i>
+      </ion-item>
+ 
+    </ion-list>
+
+
+    <h3 id="listaDePropuestas-heading26" style="color: rgb(0, 0, 0); font-weight: 300;">{{productosdecliente.length}} Productos Cerrados</h3>
+    <ion-list id="listaDePropuestas-list14">
+
+
+      <ion-item ng-repeat="n in productosdecliente" class="item-icon-right" id="listaDePropuestas-list-item130"  >
+
+
+      {{n.ramo_compania_producto__ramo__nombre}}
+
+
+        
+      </ion-item>
+ 
+    </ion-list>
+
+
+    
+
+
+        <div class="spacer" style="width: 268px; height: 45px;"></div>
+  </ion-content>
+
+
+</ion-view>

@@ -1,0 +1,140 @@
+<ion-view title="Mi Perfil" id="page11" style="">
+
+    <div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+   
+  <ion-content padding="true" class="has-header">
+   
+
+
+
+    <div class="row" style='border:0px solid #fff;'>
+
+    <div class="col"><h3 id="miPerfil-heading30" style="color: rgb(0, 0, 0); font-weight: 300; ">{{agente.user__first_name}}</h3>
+
+   
+    <h5 id="miPerfil-heading30" style="color: rgb(0, 0, 0); font-weight: 300; ">{{agente.tipo_agente__nombre}}</h5>
+     <h5 id="miPerfil-heading30" style="color: rgb(0, 0, 0); font-weight: 300; ">{{agente.correo_capital}}</h5>
+
+    
+    </div>
+    <div class="col col-60">
+
+      <img src="{{host}}/{{agente.photo}}" style="display: block; width: 60%; height: auto; margin-left: auto; margin-right: auto; border-radius:50%;">
+
+      <div  class="upload">
+      <input  onchange="angular.element(this).scope().setFile(this)" accept="image/*" type = "file" file-model = "myFile"/>
+      </div>
+
+
+    </div>
+
+    </div>
+
+    <form ng-submit='actualiza(agente)' ng-model='agente' id="miPerfil-form5" class="list">
+
+
+
+    
+      <h3 id="citaPOS-heading48" style="color: rgb(0, 0, 0); font-weight: 300;">Tus Metas</h3>
+
+      <label class="item item-input" id="miPerfil-input58" >
+        <span class="input-label">Meta Requerida  </span>
+        <span>US $</span><input ng-model='agente.meta_requerida' placeholder="" disabled type="text">
+      </label>
+
+
+      <label class="item item-input" id="miPerfil-input42">
+        <span class="input-label">Meta Personal </span>
+        <span>US $</span><input ng-model='agente.meta_personal' placeholder=""  type="text">
+      </label>
+
+
+      <h3 id="citaPOS-heading48" style="color: rgb(0, 0, 0); font-weight: 300;">Tus Datos</h3>
+      
+
+      <label class="item item-input" id="miPerfil-input44">
+        <span class="input-label">Usuario</span>
+        <input ng-model='agente.user__username' placeholder="" disabled type="text">
+      </label>
+
+       <label class="item item-input" id="miPerfil-input10">
+        <span class="input-label">Password</span>
+        <input ng-model="agente.password" placeholder=""  type="password">
+      </label>
+
+        <label class="item item-input" id="miPerfil-input44">
+        <span class="input-label">Equipo</span>
+        <input ng-model='agente.estructura__nombre' placeholder="" disabled  type="text">
+      </label>
+
+    
+      <label class="item item-input" id="miPerfil-select14">
+        <span class="input-label">Pais</span>      
+          <input ng-model='agente.user__pais__nombre' placeholder="" disabled type="text">
+      </label>
+   
+
+      <label class="item item-input" id="miPerfil-input45">
+        <span class="input-label">Telefono</span>
+        <input ng-model='agente.telefono' placeholder=""  type="text">
+        
+      </label>
+
+
+     
+
+
+      <button id="clientes-button112" type='submit' class="button button-positive button-block">Guardar</button>
+      <!-- <h3 id="miPerfil-heading24" style="color: rgb(0, 0, 0); font-weight: 300;">Tabla de Comisiones</h3> -->
+    </form>
+    <div class="spacer" style="width: 268px; height: 41px;"></div>
+  </ion-content>
+</ion-view>
+<style type="text/css">
+  
+
+
+     div.upload {
+          width: 100px;
+    height: 100px;
+    background: transparent;
+    overflow: hidden;
+    /* border: 1px dashed #607d8b; */
+    background-size: 36px;
+    padding: 18px;
+    position: absolute;
+    top: 2em;
+    right: 40px;
+    }
+
+    div.upload input {
+        display: block !important;
+        width: 100px !important;
+        height: 100px !important;
+        opacity: 0 !important;
+        overflow: hidden !important;
+    }
+
+    .row:hover{
+      background: transparent;
+    }
+
+</style>

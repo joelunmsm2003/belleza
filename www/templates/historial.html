@@ -1,0 +1,87 @@
+<ion-view title="Historial" id="page19" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+
+  <ion-content padding="true" class="has-header">
+    <h3 id="historial-heading17" style="color: rgb(0, 0, 0); font-weight: 300;">Historial de Citas</h3>
+    
+
+
+    <!-- <ion-list id="historial-list10">
+       <label class="item item-input" id="historial-input40">
+        <span class="input-label">Fecha</span>
+        <input placeholder="" type="date">
+      </label>
+      <label class="item item-select" id="historial-select16">
+        <span class="input-label">Tipo</span>
+        <select>
+          <option>Seguimiento</option>
+          <option>Nuevo</option>
+          <option>POS</option>
+        </select>
+      </label>
+      <label class="item item-input" id="historial-input60">
+        <span class="input-label">Cliente</span>
+        <input placeholder="" type="text">
+      </label> 
+      <label class="item item-input" id="historial-input67">
+        <span class="input-label">Producto</span>
+        <input placeholder="" type="text">
+      </label>
+    </ion-list> -->
+   <!--  <button id="historial-button105" class="button button-positive button-block">Buscar</button> -->
+
+   <form id="pOS-form26" class="list">
+
+       <label class="item item-input" id="seguimiento-search1" style="">
+        <i class="icon ion-search placeholder-icon"></i>
+        <input type="search"   ng-model='datocliente' placeholder="Buscar registro">
+      </label>
+
+       <ion-item class="item-icon-right" id="seguimiento2-list-item110" ng-click='reloadpage()' style="font-weight:300;">Actualizar
+        <i class="icon ion-android-sync"></i>
+      </ion-item>
+
+  </form>
+
+
+
+  <div class="row header" >
+          <div class="col" style='max-width: 20%;'>Fecha</div>
+          <div class="col" style='max-width: 20%;'>Tipo</div>
+          <div class="col" style='max-width: 30%;'>Cliente</div>
+          <div class="col" style='max-width: 30%;'>Ramo/Cia</div>
+        
+  </div>
+
+
+  <div class="row" ng-repeat="n in citas | filter: datocliente"  ui-sref="cita({cita: {{n.id}}})">
+  <div class="col" style='max-width: 20%;'>{{n.fecha_cita}}</div>
+  <div class="col" style='max-width: 20%;' ng-if="n.tipo_seguimiento__nombre=='Seguimiento'">Seg</div>
+  <div class="col" style='max-width: 20%;' ng-if="n.tipo_seguimiento__nombre!='Seguimiento'">{{n.tipo_seguimiento__nombre}}</div>
+  <div class="col" style='max-width: 30%;'>{{n.cliente__user__first_name}}</div>
+
+  <div class="col" style='max-width: 30%;'>{{n.propuesta_cliente__ramo_compania_producto__ramo__nombre}}/{{n.propuesta_cliente__ramo_compania_producto__compania__nombre | limitTo: 4}}</div>
+  
+</div> 
+
+  </ion-content>
+</ion-view>

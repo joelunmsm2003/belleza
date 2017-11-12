@@ -1,0 +1,54 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title" style='font-weight: 300;'>Agregar Nuevo Cliente</h1>
+      <button class="button button-default" ng-click="nuevoclientemodal.hide();" style='background:#000;color:#fff;'><i class="icon ion-close"></i></button>
+    </ion-header-bar>
+    <ion-content style='padding: 10px;'>
+
+  
+      <form id="prospectoDeCliente-form10" class="list" ng-submit='agregacliente(cliente)'>
+        <ion-item class="item-icon-left info" id="prospectoDeCliente-list-item21" style="">
+          <i class="icon ion-android-clipboard"></i>Datos del prospecto</ion-item>
+        <label class="item item-input" id="prospectoDeCliente-input14">
+
+        
+          <span class="input-label">Fecha de Cita</span>
+          <input ng-model='cliente.fecha_inicio' placeholder="" type="date">
+        </label>
+        <label class="item item-input" id="prospectoDeCliente-input26">
+          <span class="input-label">Apellidos</span>
+          <input ng-model='cliente.last_name' placeholder="" type="text">
+        </label>
+        <label class="item item-input" id="prospectoDeCliente-input27">
+          <span class="input-label">Nombres</span>
+          <input ng-model='cliente.first_name' placeholder="" type="text">
+        </label>
+
+        <!-- <label class="item item-input" id="prospectoDeCliente-input27">
+          <span class="input-label">Email</span>
+          <input ng-model='cliente.email' placeholder="" type="email">
+        </label> -->
+
+        
+        <label class="item item-input" id="prospectoDeCliente-input24">
+          <span class="input-label">Telefono</span>
+          <input ng-model='cliente.telefono' placeholder="" type="number">
+        </label>
+
+        <label class="item item-input" id="prospectoDeCliente-input28">
+          <span class="input-label">Direccion</span>
+          <input ng-model='cliente.direccion' placeholder="" type="text">
+        </label> 
+   <!--      <label class="item item-input" id="prospectoDeCliente-textarea2">
+          <span class="input-label">Observacion</span><textarea rows="5" ng-model='cliente.observacion' placeholder=""></textarea></label> -->
+
+
+       <button id="nuevaPropuesta-button67" type='submit' class="button button-positive button-block">Guardar Cliente</button>
+
+        </form>
+     
+
+
+    </ion-content>
+  </ion-modal-view>
+

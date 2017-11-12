@@ -1,0 +1,603 @@
+<ion-view title="Resumen de Citas" id="page23" style="">
+  <ion-content padding="true" class="has-header">
+    <h3 id="metricas-heading35" style="color: rgb(0, 0, 0); font-weight: 300;">Termometro de Citas</h3>
+    <h4 id="metricas-heading37" style="color: rgb(0, 0, 0); font-weight: 300;">Citas Requeridas vs Realizadas</h4>
+
+ 
+   <br>
+
+    <!-- <div class="progress progress-striped active"> -->
+
+    <div class="containerflex " style='    margin-top: -10px;
+    border: 1px solid #0e509d;
+    padding: 7px;
+    border-radius: 15px 15px 15px 15px;'>
+
+
+
+
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje" >
+        
+
+      </section>
+      <section class=" flexporcentaje">
+        
+
+      </section>
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje">
+
+      
+      </section>
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje">
+
+        
+      </section>
+      <section class=" flexporcentaje" >
+
+        
+      </section>
+    </div>
+
+
+    <div class="containerflex ">
+
+
+
+
+      <section class=" flexporcentaje">
+
+        10
+      </section>
+      <section class=" flexporcentaje" >
+        20
+
+      </section>
+      <section class=" flexporcentaje">
+        30
+
+      </section>
+      <section class=" flexporcentaje">
+
+        40
+      </section>
+      <section class=" flexporcentaje">
+
+        50
+      </section>
+      <section class=" flexporcentaje">
+
+        60
+      </section>
+      <section class=" flexporcentaje">
+
+        70
+      </section>
+      <section class=" flexporcentaje">
+
+        80
+      </section>
+      <section class=" flexporcentaje">
+
+        90
+      </section>
+      <section class=" flexporcentaje" >
+
+        100
+      </section>
+    </div>
+      
+
+
+      
+
+      <div class="progress-bar" class='animated fadeInLeft' role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{medida}}%; background:{{colorestado}};">
+        <span class="sr-only " style="
+        
+    padding-right: 1px;
+    padding-top: 6px;
+    left: 16px;
+    position: absolute;">{{medida}} %</span>
+      </div>
+
+
+      <div class="progress-bar_2" class='animated fadeInLeft' role="progressbar" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100" style="width: {{porcentajeesperado}}%; background:#95b3d7;
+padding-right: 11px;     color: #95b3d7;">
+        <span class="sr-only ">.<span ng-if='medida>10'></span></span>
+      </div>
+
+
+  <br>
+   <label class="item item-select" id="nuevaPropuesta-select8">
+          <span class="input-label">Semana</span>
+          <select  ng-change= "sacasemana(item)" ng-options="item as (item.fecha_inicio + ' - ' +item.fecha_fin) for item in semanas track by item.id" type="text" class="form-control" ng-model="item" required ="" ></select>
+        </label>
+
+         <label class="item item-select" id="nuevaPropuesta-select8">
+          <span class="input-label">Mes</span>
+          <select  ng-change= "sacames(i)" ng-options="i as i.nombre for i in mes track by i.id" type="text" class="form-control" ng-model="i" required ="" ></select>
+        </label>
+
+
+
+    <h3 ng-if='item || i' id="miGestion-heading25" style="color: rgb(0, 0, 0); font-weight: 300;">Resumen de citas</h3>
+    <div  ng-if='item || i' style="overflow-x:auto;">
+      <table>
+        <tbody>
+          <tr>
+            <th class="x"></th>
+            
+
+            <th>{{item.fecha_inicio}} - {{item.fecha_fin}} </th>
+            <th>{{i.nombre}}</th>
+           
+
+          </tr>
+
+          <tr>
+
+            <td class="x">Nuevas Citas</td>
+            <td>{{calculo.ncitas}}</td>
+            <td ng-if='ncmes[0].total'>{{ncmes[0].total}}</td>
+            <td ng-if='ncmes[0].total==undefined'>0</td>
+
+          </tr>
+          <tr>
+
+            <td class="x">Segu</td>
+            <td>{{calculo.nseguimiento}}</td>
+            <td ng-if='nsmes[0].total'>{{nsmes[0].total}}</td>
+            <td ng-if='nsmes[0].total==undefined'>0</td>
+            
+
+          </tr>
+          <tr>
+            <td class="x">POS</td>
+            <td>{{calculo.npos}}</td>
+            <td ng-if='npmes[0].total'>{{npmes[0].total}}</td>
+             <td ng-if='npmes[0].total==undefined' >0</td>
+           
+          </tr>
+          <tr>
+            <td class="x">Total</td>
+            <td>{{calculo.ncitas+calculo.nseguimiento+calculo.npos}}</td>
+            <td>{{ncmes[0].total+nsmes[0].total+npmes[0].total}}</td>
+          
+
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    
+    
+   <!--  </div> -->
+
+
+
+
+<!--     <div class="containerflex ">
+
+
+
+
+      <section class=" flexporcentaje" style="background: #0070c0;
+    color: #fff;border-radius: 12px 0px 0px 12px;">
+
+        10
+      </section>
+      <section class=" flexporcentaje" style="background: #0070c0;
+    color: #fff;">
+        20
+
+      </section>
+      <section class=" flexporcentaje" style="background: #0070c0;
+    color: #fff;">
+        30
+
+      </section>
+      <section class=" flexporcentaje">
+
+        40
+      </section>
+      <section class=" flexporcentaje">
+
+        50
+      </section>
+      <section class=" flexporcentaje">
+
+        60
+      </section>
+      <section class=" flexporcentaje">
+
+        70
+      </section>
+      <section class=" flexporcentaje">
+
+        80
+      </section>
+      <section class=" flexporcentaje">
+
+        90
+      </section>
+      <section class=" flexporcentaje" style="border-radius: 0px 12px 12px 0px;">
+
+        100
+      </section>
+    </div> -->
+
+
+
+    <h3 id="metricas-heading39" style="color: rgb(0, 0, 0); font-weight: 300;">Detalle de Visitas 2017</h3>
+    <div class="spacer" style="width: 300px; height: 30px;"></div>
+    <div>
+      <div class="containerflex ">
+
+        <section class=" flex4x" style="background: none;">
+
+        </section>
+
+
+        <section class=" flex4x1" style="background: none;flex: 6.5;">
+
+        </section>
+
+        <section class=" flex3" style="background:#17365d; color:#fff;">
+
+          N
+        </section>
+        <section class=" flex3" style="background:#366092; color:#fff;">
+          S
+
+        </section>
+        <section class=" flex3" style="background:#95b3d7; color:#fff;">
+          POS
+        </section>
+        <section class=" flex3" style="background:#0070c0; color:#fff;">
+
+          Total
+        </section>
+      </div>
+
+
+
+      <div class="containerflex " style="margin-bottom:12px;">
+
+        <section class=" flex1">
+          TOTAL YTD
+        </section>
+        <section class=" flex2">
+
+        {{m090408.n+m091115.n+m091822.n+m092529.n+m100206.n+m100913.n+m101620.n+m102327.n+m103003.n+m110610.n+m111317.n+m112024.n+m112701.n+m120408.n+m121115.n+m121822.n+m122529.n}}
+
+
+        </section>
+        <section class=" flex2">
+
+        {{m090408.c+m091115.c+m091822.c+m092529.c+m100206.c+m100913.c+m101620.c+m102327.c+m103003.c+m110610.c+m111317.c+m112024.c+m112701.c+m120408.c+m121115.c+m121822.c+m122529.c}}
+
+        </section>
+        <section class=" flex2">
+
+        {{m090408.p+m091115.p+m091822.p+m092529.p+m100206.p+m100913.p+m101620.p+m102327.p+m103003.p+m110610.p+m111317.p+m112024.p+m112701.p+m120408.p+m121115.p+m121822.p+m122529.p}}
+
+
+        </section>
+        <section class=" flex2">
+          
+          {{m090408.t+m091115.t+m091822.t+m092529.t+m100206.t+m100913.t+m101620.t+m102327.t+m103003.t+m110610.t+m111317.t+m112024.t+m112701.t+m120408.t+m121115.t+m121822.t+m122529.t}}
+        
+        </section>
+      </div>
+    </div>
+    <div class="spacer" style="width: 300px; height: 30px;"></div>
+    <div>
+
+
+
+
+      <div class="containerflex" style="border: 1px solid #9ebdd4;">
+
+        <section class=" flex4x" style="background:#17365d;color:#fff;">
+          Mes
+        </section>
+
+
+        <section class=" flex4x1">
+          Semana
+        </section>
+
+        <section class=" flex3" style="background:#17365d; color:#fff;">
+
+          N
+        </section>
+        <section class=" flex3" style="background:#366092; color:#fff;">
+          S
+
+        </section>
+        <section class=" flex3" style="background:#95b3d7; color:#fff;">
+          POS
+        </section>
+        <section class=" flex3" style="background:#0070c0; color:#fff;">
+
+          Total
+        </section>
+      </div>
+
+
+      <div class="containerflex">
+        <section class="flex5">SET</section>
+        <section class="flex6">
+
+          <div class="containervertical">
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">1</section>
+                <section class="semanasemana">4 al 8</section>
+                <section class="flex2x">{{m090408.n}}</section>
+                <section class="flex2x">{{m090408.c}}</section>
+                <section class="flex2x">{{m090408.p}}</section>
+                <section class="flex2x">{{m090408.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">2</section>
+                <section class="semanasemana">11 al 15</section>
+                <section class="flex2x">{{m091115.n}}</section>
+                <section class="flex2x">{{m091115.c}}</section>
+                <section class="flex2x">{{m091115.p}}</section>
+                <section class="flex2x">{{m091115.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  18 al 23
+                </section>
+                <section class="flex2x">{{m091822.n}}</section>
+                <section class="flex2x">{{m091822.c}}</section>
+                <section class="flex2x">{{m091822.p}}</section>
+                <section class="flex2x">{{m091822.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  25 al 29
+                </section>
+                <section class="flex2x">{{m092529.n}}</section>
+                <section class="flex2x">{{m092529.c}}</section>
+                <section class="flex2x">{{m092529.p}}</section>
+                <section class="flex2x">{{m092529.t}}</section>
+              </div>
+            </section>
+
+          </div>
+
+        </section>
+
+      </div>
+
+      <div class="containerflex">
+        <section class="flex5" style="height: 164px;padding-top: 70px;">OCT</section>
+        <section class="flex6">
+        
+          <div class="containervertical">
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">1</section>
+                <section class="semanasemana">2 al 6</section>
+                <section class="flex2x">{{m100206.n}}</section>
+                <section class="flex2x">{{m100206.c}}</section>
+                <section class="flex2x">{{m100206.p}}</section>
+                <section class="flex2x">{{m100206.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">2</section>
+                <section class="semanasemana">09 al 13</section>
+                <section class="flex2x">{{m100913.n}}</section>
+                <section class="flex2x">{{m100913.c}}</section>
+                <section class="flex2x">{{m100913.p}}</section>
+                <section class="flex2x">{{m100913.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  16 al 20
+                </section>
+                <section class="flex2x">{{m101620.n}}</section>
+                <section class="flex2x">{{m101620.c}}</section>
+                <section class="flex2x">{{m101620.p}}</section>
+                <section class="flex2x">{{m101620.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  23 al 27
+                </section>
+                <section class="flex2x">{{m102327.n}}</section>
+                <section class="flex2x">{{m102327.c}}</section>
+                <section class="flex2x">{{m102327.p}}</section>
+                <section class="flex2x">{{m102327.t}}</section>
+              </div>
+            </section>
+
+             <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  30 al 03
+                </section>
+                <section class="flex2x">{{m103003.n}}</section>
+                <section class="flex2x">{{m103003.c}}</section>
+                <section class="flex2x">{{m103003.p}}</section>
+                <section class="flex2x">{{m103003.t}}</section>
+              </div>
+            </section>
+
+          </div>
+
+        </section>
+
+      </div>
+
+        <div class="containerflex">
+        <section class="flex5">NOV</section>
+        <section class="flex6">
+        
+          <div class="containervertical">
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">1</section>
+                <section class="semanasemana">6 al 10</section>
+                <section class="flex2x">{{m110610.n}}</section>
+                <section class="flex2x">{{m110610.c}}</section>
+                <section class="flex2x">{{m110610.p}}</section>
+                <section class="flex2x">{{m110610.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">2</section>
+                <section class="semanasemana">13 al 17</section>
+                <section class="flex2x">{{m111317.n}}</section>
+                <section class="flex2x">{{m111317.c}}</section>
+                <section class="flex2x">{{m111317.p}}</section>
+                <section class="flex2x">{{m111317.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  20 al 24
+                </section>
+                <section class="flex2x">{{m112024.n}}</section>
+                <section class="flex2x">{{m112024.c}}</section>
+                <section class="flex2x">{{m112024.p}}</section>
+                <section class="flex2x">{{m112024.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  27 al 01
+                </section>
+                <section class="flex2x">{{m112701.n}}</section>
+                <section class="flex2x">{{m112701.c}}</section>
+                <section class="flex2x">{{m112701.p}}</section>
+                <section class="flex2x">{{m112701.t}}</section>
+              </div>
+            </section>
+
+          
+
+          </div>
+
+        </section>
+
+      </div>
+
+      <div class="containerflex">
+        <section class="flex5">DIC</section>
+        <section class="flex6">
+        
+          <div class="containervertical">
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">1</section>
+                <section class="semanasemana">4 al 8</section>
+                <section class="flex2x">{{m120408.n}}</section>
+                <section class="flex2x">{{m120408.c}}</section>
+                <section class="flex2x">{{m120408.p}}</section>
+                <section class="flex2x">{{m120408.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">2</section>
+                <section class="semanasemana">11 al 15</section>
+                <section class="flex2x">{{m121115.n}}</section>
+                <section class="flex2x">{{m121115.c}}</section>
+                <section class="flex2x">{{m121115.p}}</section>
+                <section class="flex2x">{{m121115.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  18 al 23
+                </section>
+                <section class="flex2x">{{m121822.n}}</section>
+                <section class="flex2x">{{m121822.c}}</section>
+                <section class="flex2x">{{m121822.p}}</section>
+                <section class="flex2x">{{m121822.t}}</section>
+              </div>
+            </section>
+
+            <section class=" flex31">
+              <div class="containerflex">
+                <section class="semana">3</section>
+                <section class="semanasemana">
+                  25 al 29
+                </section>
+                <section class="flex2x">{{m122529.n}}</section>
+                <section class="flex2x">{{m122529.c}}</section>
+                <section class="flex2x">{{m122529.p}}</section>
+                <section class="flex2x">{{m122529.t}}</section>
+              </div>
+            </section>
+
+
+          </div>
+
+        </section>
+
+      </div>
+
+
+
+
+    </div>
+  </ion-content>
+</ion-view>

@@ -1,0 +1,46 @@
+<ion-view title="Biblioteca" id="biblioteca" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+
+
+
+
+  <ion-content padding="true" class="has-header">
+    <h3 id="citaPOS-heading48" style="color: rgb(0, 0, 0); font-weight: 300;">Archivos</h3>
+  
+   
+
+    <div class="list">
+
+     
+
+      <a class="item item-icon-right" href="http://xiencias.com:3000/{{n.ruta}}" ng-repeat='n in archivos' style='color: #123;'>
+       <i class="icon ion-ios-cloud-download-outline"></i>
+        {{n.nombre}}
+        
+      </a>
+
+      
+
+    </div>
+
+  </ion-content>
+</ion-view>

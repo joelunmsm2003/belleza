@@ -1,0 +1,53 @@
+<ion-view title="Cita POS" id="page29" style="">
+
+<div class = "tabs tabs-icon-only">
+
+    <a class = "tab-item" ui-sref="inicio()">
+      <i class = "icon {{iconos[5]['icono']}}" style='color:#fff;'></i>
+   </a>
+   <a class = "tab-item" ui-sref="prospectoDeCliente()">
+      <i class = "icon {{iconos[1]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="seguimiento()">
+      <i class = "icon {{iconos[3]['icono']}}" style='color:#fff;'></i>
+   </a>
+  
+   <a class = "tab-item" ui-sref="pOS()">
+      <i class = "icon {{iconos[4]['icono']}}" style='color:#fff;'></i>
+   </a>
+
+
+</div>
+
+  <ion-content padding="true" class="has-header">
+    <h3 id="citaPOS-heading48" style="color: rgb(0, 0, 0); font-weight: 300;">Cita POS</h3>
+   
+    <form id="citaPOS-form29" ng-submit='creapos(pos)' class="list">
+
+
+   <label class="item item-input" id="citaPOS-input59">
+        <span class="input-label">Fecha de Cita</span>
+        <input placeholder="" type="date" ng-model='pos.fecha_cita' required>
+      </label>
+
+
+      <label class="item item-select" id="nuevaPropuesta-select6">
+          <span class="input-label">POS</span>
+          <select  ng-options="item.id as item.ramo_compania_producto__producto__nombre for item in productosdecliente " type="text" class="form-control" ng-model="pos.pos" required ="" ></select>
+        </label>
+
+
+
+     
+       <label class="item item-input" id="citaPOS-input25">
+        <span class="input-label">Observacion</span>
+        <input placeholder="" type="text" ng-model='pos.observacion'>
+      </label>
+
+
+      <button type='submit' id="citaPOS-button132" class="button button-positive button-block">Guardar</button>
+
+    </form>
+    </ion-content>
+</ion-view>

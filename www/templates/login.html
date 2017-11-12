@@ -1,0 +1,59 @@
+<ion-view title="Login" hide-nav-bar="true" id="page1" style="background-color: rgb(255, 255, 255);">
+  <ion-content padding="true" style="background: url(https://www.xiencias.com/html/image001.png) no-repeat center;background-size:cover;" class="manual-ios-statusbar-padding">
+    <div class="spacer" style="height: 100px;"></div>
+    <div class="spacer" ng-class="{'preload_1': logeandose==1}"></div>
+    <div class="logo">
+      <img class='animated flipInY' src="img/logocapital_1.png" style="display: block; height: auto; margin-left: auto; margin-right: auto; max-width: 290px;">
+    </div>
+    <div id="login-container1">
+
+
+    
+
+      <form id="login-form4" class="list center-form">
+        <div class="spacer" style="height: 100px;"></div>
+        <center><h5 style='color:#333b44;' ng-repeat='n in errors'>{{n}}</h5></center>
+        <label class="item item-input" id="login-input4">
+          <span class="input-label">Usuario</span>
+          <input placeholder="" type="text" ng-model='user.username'>
+        </label>
+        <label class="item item-input" id="login-input5">
+          <span class="input-label">Contraseña</span>
+          <input placeholder="" type="password" ng-model='user.password'>
+        </label>
+        <a  id="login-button12" ng-click='ingresar(user)' class="button button-positive button-block">Ingresar</a>
+      </form>
+    </div>
+    <div id="login-button-bar2"  class="button-bar"> 
+
+
+    <span class="input-label" style="color:#fff;">Version 0.0.12</span>
+
+   
+
+
+                
+  </ion-content>
+ 
+
+
+
+</ion-view>
+
+
+
+<style type="text/css">
+  
+  .preload_1{
+    
+        height: 100%;
+    background: #133;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background: #ffffff url("img/preload.gif") no-repeat fixed center;
+    z-index: 10;
+    opacity: .3;
+    right: 0;
+  }
+</style>

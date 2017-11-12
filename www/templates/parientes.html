@@ -1,0 +1,41 @@
+<ion-modal-view>
+    <ion-header-bar>
+      <h1 class="title">Agregar Pariente/Hijo</h1>
+      <button class="button button-default" ng-click="modal.hide()" style='background:#000;color:#fff;'><i class="icon ion-close"></i></button>
+    </ion-header-bar>
+    <ion-content style='padding: 10px;'>
+
+    <form id="nuevaPropuesta-form16" class="list" ng-submit='agregapariente(pariente)'>
+
+
+
+        
+        <div class="spacer" style="width: 300px; height: 21px;"></div>
+       <span>{{pariente}}</span>
+        <label class="item item-input" id="fichaDeCliente-input32">
+        <span class="input-label">Nombre</span>
+        <input ng-model='pariente.nombre'   required type="text">
+      </label>
+        <label class="item item-input" id="fichaDeCliente-input32">
+        <span class="input-label">Fecha Nacimiento</span>
+        <input ng-model='pariente.fecha_nacimiento'  required  type="date">
+      </label>
+        <label class="item item-select" id="nuevaPropuesta-select9">
+          <span class="input-label">Relacion</span>
+          <select ng-model='pariente.relacion' required >
+            <option value='1'>Esposo(a)</option>
+            <option value='2'>Hijo</option>
+            <option></option>
+
+          </select>
+        </label>
+      
+        <button id="nuevaPropuesta-button67" type='submit' class="button button-positive button-block">Guardar</button>
+        <div id="nuevaPropuesta-button-bar13" class="button-bar"></div>
+      </form>
+
+     
+
+
+    </ion-content>
+  </ion-modal-view>

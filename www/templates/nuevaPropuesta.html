@@ -1,0 +1,55 @@
+<ion-view title="Nueva propuesta" id="page14" ng-init="tab=1" style="">
+  <ion-content padding="true" class="has-header">
+    <div class="spacer" style="width: 300px; height: 19px;"></div>
+    <div id="nuevaPropuesta-container15" >
+      <form id="nuevaPropuesta-form16" class="list" ng-submit='agregapropuesta(propuesta)'>
+        <ion-item class="item-icon-right" id="nuevaPropuesta-list-item104" style="">{{propuesta.cliente.first_name}} {{propuesta.cliente.last_name}} 
+          <i class="icon ion-android-person"></i>
+        </ion-item>
+        <div class="spacer" style="width: 300px; height: 21px;"></div>
+        <label class="item item-select" id="nuevaPropuesta-select6">
+          <span class="input-label">Ramo</span>
+
+          <select  ng-change= "obtenercia(propuesta.ramo)" ng-options="item as item.nombre for item in ramos track by item.id" type="text" class="form-control" ng-model="propuesta.ramo" required ="" ></select>
+
+
+        </label>
+        <label class="item item-select" id="nuevaPropuesta-select7">
+          <span class="input-label">Compañia</span>
+          <select  ng-change= "obtenerproducto(propuesta.cia)" ng-options="item.compania as item.compania__nombre for item in cias track by item.compania" type="text" class="form-control" ng-model="propuesta.cia" required ="" ></select>
+
+        </label>
+        <label class="item item-select" id="nuevaPropuesta-select8">
+          <span class="input-label">Producto</span>
+          <select  ng-change= "obtenerpropuesta(propuesta.producto)" ng-options="item.producto as item.producto__nombre for item in productos track by item.producto" type="text" class="form-control" ng-model="propuesta.producto" required ="" ></select>
+        </label>
+        <label class="item item-select" id="nuevaPropuesta-select9">
+          <span class="input-label">Interes</span>
+          <select ng-model='propuesta.interes'>
+            <option>Muy Interesado</option>
+            <option>Interesado</option>
+            <option>Interesado en el futuro</option>
+            <option>No interesado</option>
+          </select>
+        </label>
+        <label class="item item-input" id="nuevaPropuesta-textarea3">
+          <span class="input-label">Observacion</span><textarea rows="5" ng-model='propuesta.observacion' placeholder=""></textarea></label>
+        <button id="nuevaPropuesta-button67" type='submit' class="button button-positive button-block">Guardar Propuesta</button>
+        <div id="nuevaPropuesta-button-bar13" class="button-bar"></div>
+      </form>
+
+        <!--Listas de Propuestas -->
+
+        <ion-item class="item-icon-left" id="prospectoDeCliente-list-item23" style="">
+          <i class="icon ion-android-folder-open"></i>Lista de Propuestas</ion-item>
+
+        <ion-item ng-repeat="n in listapropuestas" class="item-icon-right" id="prospectoDeCliente-list-item25" ui-sref="propuestaSalud()" style="">{{n.ramo_compania_producto__ramo__nombre}} / {{n.ramo_compania_producto__compania__nombre}} / {{n.ramo_compania_producto__producto__nombre}}
+          <i class="icon ion-chevron-right"></i>
+        </ion-item>
+
+     
+      
+    </div>
+  </ion-content>
+</ion-view>
+

@@ -1,0 +1,37 @@
+<ion-view title="Cita" id="page20" style="">
+  <ion-content padding="true" class="has-header">
+    <div id="cita-button-bar23" class="button-bar"></div>
+    <h3 id="cita-heading32" style="color: rgb(0, 0, 0); font-weight: 300;">Detalle de la cita</h3>
+    <ion-list id="cita-list11">
+      <ion-item class="item-icon-right" id="cita-list-item119"   style="">{{cita.cliente__user__first_name}}
+        <i class="icon ion-android-person"></i>
+      </ion-item>
+
+      <label class="item item-input" id="cita-input15">
+        <span class="input-label">Fecha Cita</span>
+        {{cita.fecha_cita}}
+      </label>
+      <label class="item item-input" id="cita-input15">
+        <span class="input-label">Ramo</span>
+        <input placeholder="Seguros Vida" type="text" ng-model='cita.propuesta_cliente__ramo_compania_producto__ramo__nombre'>
+      </label>
+      <label class="item item-input" id="cita-input16">
+        <span class="input-label">Compañia</span>
+        <input placeholder="Hermes" type="text" ng-model='cita.propuesta_cliente__ramo_compania_producto__compania__nombre'>
+      </label>
+      <label class="item item-input" id="cita-input29">
+        <span class="input-label">Producto</span>
+        <input placeholder="121212" type="text" ng-model='cita.propuesta_cliente__ramo_compania_producto__producto__nombre' >
+      </label>
+      <label class="item item-input" id="cita-input30">
+        <span class="input-label">Observaciones</span>
+        <textarea type="text" ng-model='cita.observacion' rows='5' ></textarea> 
+      </label>
+
+      <!-- <button ng-click='updatecita(cita)' id="calculadora-button1" class="button button-positive button-block" >Guardar</button> -->
+
+       <button ng-click='eliminarcita(cita)' id="calculadora-button1" class="button button-positive button-block button-outline" >Eliminar Cita</button> 
+    </ion-list>
+    <div id="cita-button-bar9" class="button-bar"></div>
+  </ion-content>
+</ion-view>
